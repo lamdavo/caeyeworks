@@ -35,15 +35,15 @@ const links = [
 ];
 
 const navWrapper = (
-  <div className='w-full'>
-    <ul className='flex flex-row text-lg'>
+  <div className='w-full hidden md:block'>
+    <ul className='flex flex-row md:text-sm lg:text-base md:px-11 md:py-5'>
       {links.map((link) => {
         const { id, url, text } = link;
         return (
           <>
             <li key={id} className='grow'>
               <a href={url}>{text}</a>
-              <span className='pl-5'>|</span>
+              <span className='pl-2'>|</span>
             </li>
           </>
         );
@@ -60,7 +60,7 @@ const logoWrapper = (
 
 export const Navbar = () => {
   return (
-    <div className='max-w-screen-2xl mx-auto h-30 flex items-center bg-blue-950 fixed top-0 left-0 right-0 z-50'>
+    <div className='max-w-screen-2xl mx-auto h-30 flex md:flex-col lg:flex-row items-center bg-blue-950 fixed top-0 left-0 right-0 z-50'>
       {logoWrapper}
       {navWrapper}
     </div>
